@@ -9,8 +9,6 @@ namespace OOP02
     class Atlet
     {
         private int unava = 0;
-        private int ubehnuto;
-        private int naspano = 0;
         private string prijmeni;
         public string Jmeno { get; }
 
@@ -39,7 +37,6 @@ namespace OOP02
         {
             while (unava != 200 && kilometry != 0)
             {
-                ubehnuto = ubehnuto + 1;
                 unava = unava + 10;
                 --kilometry;
             }
@@ -49,7 +46,6 @@ namespace OOP02
         {
             while (unava >= 0 && hodiny != 0)
             {
-                naspano = naspano + 1;
                 unava = unava - 100;
                 --hodiny;
             }
