@@ -8,18 +8,35 @@ namespace OOP02
 {
     class Atlet
     {
-        private string jmeno;
-        private int unava;
+        private int unava = 0;
         private int ubehnuto;
-        private int naspano;
-        public Atlet(string jmeno)
+        private int naspano = 0;
+        private string prijmeni;
+        public string Jmeno { get; }
+
+        public string Prijmeni 
         {
-            this.jmeno = jmeno;
+            get
+            {
+                return prijmeni;
+            }
+            set
+            {
+                string p = value;
+                Char.ToUpper(p[0]);
+                prijmeni = p[0] + p.Substring(1);
+            }
+        }
+
+
+        public Atlet(string jmeno, string prijmeni)
+        {
+            Jmeno = jmeno;
+            Prijmeni = prijmeni;
         }
 
         public void Behej(int kilometry)
         {
-            unava = 0;
             while (unava != 200 && kilometry != 0)
             {
                 ubehnuto = ubehnuto + 1;
@@ -30,8 +47,6 @@ namespace OOP02
 
         public void Spi(int hodiny)
         {
-            unava = 200;
-            naspano = 0;
             while (unava >= 0 && hodiny != 0)
             {
                 naspano = naspano + 1;
@@ -40,11 +55,16 @@ namespace OOP02
             }
         }
 
-        public int ZjistiUnavu()
+        public int GetUnava()
         {
             return unava;
         }
 
+        public override string ToString()
+        {
+            string s = "\nUnava atleta: " + GetUnava();
 
+            return base.ToString() + s;
+        }
     }
 }

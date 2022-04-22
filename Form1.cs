@@ -16,5 +16,17 @@ namespace OOP02
         {
             InitializeComponent();
         }
+        Atlet atletik = new Atlet("Ivan", "Ivanovic");
+        private void button1_Click(object sender, EventArgs e)
+        {
+            atletik.Behej(16);
+            MessageBox.Show(atletik.ToString());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            atletik.Spi(1);
+            MessageBox.Show(atletik.ToString());
+        }
     }
 }
