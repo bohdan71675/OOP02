@@ -10,7 +10,7 @@ namespace OOP02
     {
         private int unava = 0;
         private string prijmeni;
-        public string Jmeno { get; }
+        public string Jmeno { get; }  //jmeno nastavuje pouze kontruktor(a nemam metodu se Jmenem) proto nepotrebuju: private set;
 
         public string Prijmeni 
         {
@@ -40,13 +40,24 @@ namespace OOP02
                 unava = unava + 10;
                 --kilometry;
             }
+            if (unava == 200)
+            {
+                System.Windows.Forms.MessageBox.Show("Atlet je prilis unaveny");
+            }
         }
 
         public void Spi(int hodiny)
         {
             while (unava >= 0 && hodiny != 0)
             {
-                unava = unava - 100;
+                if (unava >= 100)
+                {
+                    unava = unava - 100;
+                }
+                else
+                {
+                    unava = 0;
+                }
                 --hodiny;
             }
         }
